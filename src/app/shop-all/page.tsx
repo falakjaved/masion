@@ -81,14 +81,42 @@ const products = [
     href: "/products/wall-clock",
     image: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80",
   },
+
+  // 🔹 Completely new products replacing the 4 problematic ones
   {
     id: 10,
-    name: "Office Desk",
-    price: "$210",
-    category: "Office",
-    href: "/products/office-desk",
-    image: "https://images.unsplash.com/photo-1583337130417-c179f3b1098f?auto=format&fit=crop&w=800&q=80", // replaced
+    name: "Cozy Armchair",
+    price: "$200",
+    category: "Furniture",
+    href: "/products/cozy-armchair",
+    image: "https://images.unsplash.com/photo-1616627981540-7b1c1f5d2f49?auto=format&fit=crop&w=800&q=80",
   },
+  {
+    id: 13,
+    name: "Glass Coffee Table",
+    price: "$130",
+    category: "Living",
+    href: "/products/glass-coffee-table",
+    image: "https://images.unsplash.com/photo-1602524205944-7e2f8c0a1b7e?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: 14,
+    name: "Compact Bookshelf",
+    price: "$180",
+    category: "Storage",
+    href: "/products/compact-bookshelf",
+    image: "https://images.unsplash.com/photo-1598300038400-1c2b5f1a9a4d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: 20,
+    name: "Wool Area Rug",
+    price: "$250",
+    category: "Decor",
+    href: "/products/wool-area-rug",
+    image: "https://images.unsplash.com/photo-1616627981535-4a2f1b1e0d1f?auto=format&fit=crop&w=800&q=80",
+  },
+
+  // 🔹 Rest of the products unchanged
   {
     id: 11,
     name: "Modern Cabinet",
@@ -104,22 +132,6 @@ const products = [
     category: "Lighting",
     href: "/products/floor-lamp",
     image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 13,
-    name: "Kitchen Stool",
-    price: "$75",
-    category: "Kitchen",
-    href: "/products/kitchen-stool",
-    image: "https://images.unsplash.com/photo-1600788915802-1c4dfdc6e65f?auto=format&fit=crop&w=800&q=80", // replaced
-  },
-  {
-    id: 14,
-    name: "Bookshelf",
-    price: "$190",
-    category: "Storage",
-    href: "/products/bookshelf",
-    image: "https://images.unsplash.com/photo-1598300038374-9c8b5d0e9e33?auto=format&fit=crop&w=800&q=80", // replaced
   },
   {
     id: 15,
@@ -160,14 +172,6 @@ const products = [
     category: "Furniture",
     href: "/products/minimal-bench",
     image: "https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 20,
-    name: "Premium Rug",
-    price: "$210",
-    category: "Decor",
-    href: "/products/premium-rug",
-    image: "https://images.unsplash.com/photo-1616627981530-9b29c316ecdf?auto=format&fit=crop&w=800&q=80", // replaced
   },
 ]
 
