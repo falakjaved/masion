@@ -87,7 +87,7 @@ const products = [
     price: "$210",
     category: "Office",
     href: "/products/office-desk",
-    image: "https://images.unsplash.com/photos/a-room-with-a-desk-a-window-and-furniture-q4tNpl8vHDc?auto=format&fit=crop&w=800&q=80", // fixed valid Unsplash image:contentReference[oaicite:1]{index=1}
+    image: "https://images.unsplash.com/photo-1583337130417-c179f3b1098f?auto=format&fit=crop&w=800&q=80", // replaced
   },
   {
     id: 11,
@@ -111,7 +111,7 @@ const products = [
     price: "$75",
     category: "Kitchen",
     href: "/products/kitchen-stool",
-    image: "https://images.unsplash.com/photos/kFJziRFCrAU?auto=format&fit=crop&w=800&q=80", // fixed valid Unsplash image:contentReference[oaicite:2]{index=2}
+    image: "https://images.unsplash.com/photo-1600788915802-1c4dfdc6e65f?auto=format&fit=crop&w=800&q=80", // replaced
   },
   {
     id: 14,
@@ -119,7 +119,7 @@ const products = [
     price: "$190",
     category: "Storage",
     href: "/products/bookshelf",
-    image: "https://images.unsplash.com/photos/fiQXgErz-QM?auto=format&fit=crop&w=800&q=80", // fixed valid Unsplash image:contentReference[oaicite:3]{index=3}
+    image: "https://images.unsplash.com/photo-1598300038374-9c8b5d0e9e33?auto=format&fit=crop&w=800&q=80", // replaced
   },
   {
     id: 15,
@@ -167,7 +167,7 @@ const products = [
     price: "$210",
     category: "Decor",
     href: "/products/premium-rug",
-    image: "https://images.unsplash.com/photos/a-room-with-a-rug-a-desk-and-a-window-q4tNpl8vHDc?auto=format&fit=crop&w=800&q=80", // valid Unsplash rug image:contentReference[oaicite:4]{index=4}
+    image: "https://images.unsplash.com/photo-1616627981530-9b29c316ecdf?auto=format&fit=crop&w=800&q=80", // replaced
   },
 ]
 
