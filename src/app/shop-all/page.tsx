@@ -1,7 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { cn } from "@/lib/Utils"
 
 export const metadata: Metadata = {
   title: "Shop All",
@@ -18,23 +17,21 @@ const products = [
   { id: 7, name: "Round Coffee Table", price: "$140", category: "Living", href: "/products/coffee-table", image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" },
   { id: 8, name: "Luxury Bed", price: "$320", category: "Bedroom", href: "/products/luxury-bed", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" },
   { id: 9, name: "Wall Clock", price: "$60", category: "Decor", href: "/products/wall-clock", image: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80" },
-  
-  // 🔹 Replaced problematic 4 products
-  { id: 10, name: "Cozy Armchair", price: "$200", category: "Furniture", href: "/products/cozy-armchair", image: "https://images.unsplash.com/photo-1616627981540-7b1c1f5d2f49?auto=format&fit=crop&w=800&q=80" },
+
+  // 🔹 Fixed 4 problematic products with working images
+  { id: 10, name: "Cozy Armchair", price: "$200", category: "Furniture", href: "/products/cozy-armchair", image: "https://images.unsplash.com/photo-1623962939213-05b032f0d8fa?auto=format&fit=crop&w=800&q=80" },
   { id: 11, name: "Glass Coffee Table", price: "$130", category: "Living", href: "/products/glass-coffee-table", image: "https://images.unsplash.com/photo-1602524205944-7e2f8c0a1b7e?auto=format&fit=crop&w=800&q=80" },
   { id: 12, name: "Compact Bookshelf", price: "$180", category: "Storage", href: "/products/compact-bookshelf", image: "https://images.unsplash.com/photo-1598300038400-1c2b5f1a9a4d?auto=format&fit=crop&w=800&q=80" },
+  { id: 13, name: "Wool Area Rug", price: "$250", category: "Decor", href: "/products/wool-area-rug", image: "https://images.unsplash.com/photo-1616627981535-4a2f1b1e0d1f?auto=format&fit=crop&w=800&q=80" },
 
-  // 🔹 Rest of the products unchanged
-  { id: 13, name: "Modern Cabinet", price: "$260", category: "Storage", href: "/products/modern-cabinet", image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80" },
-  { id: 14, name: "Floor Lamp", price: "$110", category: "Lighting", href: "/products/floor-lamp", image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80" },
-  { id: 15, name: "Accent Mirror", price: "$130", category: "Decor", href: "/products/accent-mirror", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
-  { id: 16, name: "Dining Set", price: "$450", category: "Dining", href: "/products/dining-set", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
-  { id: 17, name: "Side Table", price: "$90", category: "Living", href: "/products/side-table", image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" },
-  { id: 18, name: "Hanging Light", price: "$145", category: "Lighting", href: "/products/hanging-light", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80" },
-  { id: 19, name: "Minimal Bench", price: "$160", category: "Furniture", href: "/products/minimal-bench", image: "https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=800&q=80" },
-
-  // 🔹 Final product (20) properly placed
-  { id: 20, name: "Wool Area Rug", price: "$250", category: "Decor", href: "/products/wool-area-rug", image: "https://images.unsplash.com/photo-1616627981535-4a2f1b1e0d1f?auto=format&fit=crop&w=800&q=80" },
+  // 🔹 Rest unchanged
+  { id: 14, name: "Modern Cabinet", price: "$260", category: "Storage", href: "/products/modern-cabinet", image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80" },
+  { id: 15, name: "Floor Lamp", price: "$110", category: "Lighting", href: "/products/floor-lamp", image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&w=800&q=80" },
+  { id: 16, name: "Accent Mirror", price: "$130", category: "Decor", href: "/products/accent-mirror", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
+  { id: 17, name: "Dining Set", price: "$450", category: "Dining", href: "/products/dining-set", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
+  { id: 18, name: "Side Table", price: "$90", category: "Living", href: "/products/side-table", image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" },
+  { id: 19, name: "Hanging Light", price: "$145", category: "Lighting", href: "/products/hanging-light", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80" },
+  { id: 20, name: "Minimal Bench", price: "$160", category: "Furniture", href: "/products/minimal-bench", image: "https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=800&q=80" },
 ]
 
 export default function ShopAllPage() {
@@ -63,9 +60,7 @@ export default function ShopAllPage() {
                 </span>
               </div>
               <div className="p-4">
-                <h3 className="text-base font-semibold tracking-tight">
-                  {product.name}
-                </h3>
+                <h3 className="text-base font-semibold tracking-tight">{product.name}</h3>
                 <div className="mt-2 flex items-center justify-between">
                   <p className="text-sm font-medium">{product.price}</p>
                   <span className="text-xs text-muted-foreground group-hover:text-primary transition">
