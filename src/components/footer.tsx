@@ -1,50 +1,115 @@
 import Link from "next/link"
 
-const footerLinks = {
-  shop: ["All Products","New Arrivals","Best Sellers","Sale"],
-  company: ["Our Story","Sustainability","Press","Careers"],
-  support: ["Contact Us","FAQs","Shipping & Returns","Care Guide"]
-}
+const pageLinks = [
+  { href: "/", label: "Home" },
+  { href: "/shop", label: "Shop" },
+  { href: "/shop-all", label: "Shop All" },
+  { href: "/products", label: "Products" },
+  { href: "/collections", label: "Collections" },
+  { href: "/explore-collections", label: "Explore Collections" },
+  { href: "/new-season", label: "New Season" },
+  { href: "/journal", label: "Journal" },
+  { href: "/about", label: "About" },
+]
+
+const supportLinks = [
+  { href: "#", label: "Contact Us" },
+  { href: "#", label: "FAQ" },
+  { href: "#", label: "Shipping & Returns" },
+  { href: "#", label: "Size Guide" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-background bg-amber-50 px-6 py-12 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <Link href="/" className="font-serif text-2xl font-medium text-foreground">Maison</Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              We dream up products that bring comfort and style to your home. Thoughtfully designed, sustainably made.
+    <footer className="border-t border-border bg-background">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link href="/" className="text-xl font-bold tracking-tight">
+              STORE
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Discover curated collections and timeless pieces for every season.
             </p>
           </div>
 
-          <div>
-            <Link href="#" className="font-medium text-foreground">Shop</Link>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.shop.map((link) => <li key={link}><Link href="#" className="text-sm text-muted-foreground hover:text-foreground">{link}</Link></li>)}
+          {/* Explore Pages */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider">
+              Explore
+            </h3>
+            <ul className="space-y-2">
+              {pageLinks.slice(0, 5).map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-sm font-medium uppercase text-foreground">Company</h3>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.company.map((link) => <li key={link}><Link href="#" className="text-sm text-muted-foreground hover:text-foreground">{link}</Link></li>)}
+          {/* More Pages */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider">
+              Pages
+            </h3>
+            <ul className="space-y-2">
+              {pageLinks.slice(5).map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-sm font-medium uppercase text-foreground">Support</h3>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.support.map((link) => <li key={link}><Link href="#" className="text-sm text-muted-foreground hover:text-foreground">{link}</Link></li>)}
+          {/* Support */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider">
+              Support
+            </h3>
+            <ul className="space-y-2">
+              {supportLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Maison. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} STORE. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground">Privacy Policy</Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground">Terms of Service</Link>
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
