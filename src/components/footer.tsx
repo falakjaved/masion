@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-medium uppercase text-foreground">Shop</h3>
+            <Link href="#" className="font-medium text-foreground">Shop</Link>
             <ul className="mt-4 space-y-3">
               {footerLinks.shop.map((link) => <li key={link}><Link href="#" className="text-sm text-muted-foreground hover:text-foreground">{link}</Link></li>)}
             </ul>
