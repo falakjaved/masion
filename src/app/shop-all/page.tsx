@@ -19,10 +19,10 @@ const products = [
   { id: 9, name: "Wall Clock", price: "$60", category: "Decor", href: "/products/wall-clock", image: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=800&q=80" },
 
   // 🔹 Fixed 4 problematic products with working images
-  { id: 10, name: "Cozy Armchair", price: "$200", category: "Furniture", href: "/products/cozy-armchair", image: "https://images.unsplash.com/photo-1623962939213-05b032f0d8fa?auto=format&fit=crop&w=800&q=80" },
-  { id: 11, name: "Glass Coffee Table", price: "$130", category: "Living", href: "/products/glass-coffee-table", image: "https://images.unsplash.com/photo-1602524205944-7e2f8c0a1b7e?auto=format&fit=crop&w=800&q=80" },
-  { id: 12, name: "Compact Bookshelf", price: "$180", category: "Storage", href: "/products/compact-bookshelf", image: "https://images.unsplash.com/photo-1598300038400-1c2b5f1a9a4d?auto=format&fit=crop&w=800&q=80" },
-  { id: 13, name: "Wool Area Rug", price: "$250", category: "Decor", href: "/products/wool-area-rug", image: "https://images.unsplash.com/photo-1616627981535-4a2f1b1e0d1f?auto=format&fit=crop&w=800&q=80" },
+  { id: 10, name: "Cozy Armchair", price: "$200", category: "Furniture", href: "/products/cozy-armchair", image: "Cozy-Armchair.avif" },
+  { id: 11, name: "Glass Coffee Table", price: "$130", category: "Living", href: "/products/glass-coffee-table", image: "Glass-Coffee-Table.avif" },
+  { id: 12, name: "Compact Bookshelf", price: "$180", category: "Storage", href: "/products/compact-bookshelf", image: "Compact-Bookshelf.avif" },
+  { id: 13, name: "Wool Area Rug", price: "$250", category: "Decor", href: "/products/wool-area-rug", image: "Wool-Area-Rug.avif" },
 
   // 🔹 Rest unchanged
   { id: 14, name: "Modern Cabinet", price: "$260", category: "Storage", href: "/products/modern-cabinet", image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80" },
