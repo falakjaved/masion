@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"; // updated import for Next 16
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { CartProvider } from "@/lib/context/CartContext";
+
 const geist = Geist({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"] });
 
@@ -39,9 +41,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        <Navbar />
-        {children}
-        <Analytics />
+        <CartProvider> {/* ✅ Wrap all children with CartProvider */}
+          <Navbar />
+          {children}
+          <Analytics />
+        </CartProvider>
       </body>
     </html>
   );

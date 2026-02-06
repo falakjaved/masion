@@ -144,7 +144,7 @@ export default function CollectionsPage() {
                 {featuredCollection.description}
               </p>
               <Link
-                href={featuredCollection.href}
+                href="/new-season"
                 className="group mt-8 inline-flex items-center gap-3 border-b-2 border-foreground pb-1 text-sm font-medium uppercase tracking-widest text-foreground transition-all duration-300 hover:gap-4 hover:border-accent hover:text-accent"
               >
                 Explore Collection

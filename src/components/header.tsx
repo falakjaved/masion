@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Search, ShoppingBag, User, Menu, X } from "lucide-react"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 
 const navLinks = [
   { name: "Shop", href: "#" },
@@ -16,12 +16,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur bg-white supports-backdrop-filter:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        {/* Mobile Menu Toggle */}
         <div className="flex lg:hidden">
-          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <Button
+            asChild={false} // normal button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
 
+        {/* Desktop nav */}
         <div className="hidden lg:flex lg:gap-x-8">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href} className="text-sm font-medium text-foreground/80 hover:text-foreground">
@@ -30,12 +37,14 @@ export function Header() {
           ))}
         </div>
 
+        {/* Logo */}
         <div className="flex items-center justify-center">
           <Link href="/" className="font-serif text-2xl font-medium tracking-tight text-foreground">
             Maison
           </Link>
         </div>
 
+        {/* Icons */}
         <div className="flex items-center gap-x-2">
           <Button variant="ghost" size="icon"><Search className="h-5 w-5" /></Button>
           <Button variant="ghost" size="icon" className="hidden sm:flex"><User className="h-5 w-5" /></Button>
@@ -46,10 +55,16 @@ export function Header() {
         </div>
       </nav>
 
+      {/* Mobile Menu Links */}
       {mobileMenuOpen && (
         <div className="lg:hidden px-6 pb-4 space-y-1">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="block py-2 text-base font-medium text-foreground/80 hover:text-foreground" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              key={link.name}
+              href={link.href}
+              className="block py-2 text-base font-medium text-foreground/80 hover:text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               {link.name}
             </Link>
           ))}

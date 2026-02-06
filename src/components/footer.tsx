@@ -10,13 +10,15 @@ const pageLinks = [
   { href: "/new-season", label: "New Season" },
   { href: "/journal", label: "Journal" },
   { href: "/about", label: "About" },
+  
 ]
 
 const supportLinks = [
-  { href: "#", label: "Contact Us" },
-  { href: "#", label: "FAQ" },
-  { href: "#", label: "Shipping & Returns" },
-  { href: "#", label: "Size Guide" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/shipping-returns", label: "Shipping & Returns" },
+  { href: "/size-guide", label: "Size Guide" },
+  { href: "/cart", label: "Cart" },
 ]
 
 export function Footer() {

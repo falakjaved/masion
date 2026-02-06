@@ -18,31 +18,30 @@ const navLinks = [
   { href: "/new-season", label: "New Season" },
   { href: "/journal", label: "Journal" },
   { href: "/about", label: "About" },
+  {href: "/contact", label: "contact"}
 ]
 
-function Navbar() {
+export default function Navbar() {
   const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-tight">
+        <Link href="/" className="text-xl font-bold">
           STORE
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop */}
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground",
-                  pathname === link.href
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground"
+                  "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent",
+                  pathname === link.href ? "bg-accent text-accent-foreground" : "text-muted-foreground"
                 )}
               >
                 {link.label}
@@ -51,25 +50,18 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Navigation */}
-        {/* @ts-ignore */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          {/* @ts-ignore */}
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon" aria-label="Open menu">
+        {/* Mobile Menu */}
+        <Sheet open={open} onOpenChange={(value: boolean) => setOpen(value)}>
+          <SheetTrigger asChild>
+            <Button asChild={true} variant="ghost" size="icon" aria-label="Open menu" className="lg:hidden">
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-75 sm:w-100">
+          <SheetContent side="right" className="w-72 sm:w-80">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-
-            <div className="flex flex-col gap-4 mt-8">
-              <Link
-                href="/"
-                className="text-xl font-bold tracking-tight mb-4"
-                onClick={() => setIsOpen(false)}
-              >
+            <div className="mt-8 flex flex-col gap-4">
+              <Link href="/" className="text-xl font-bold" onClick={() => setOpen(false)}>
                 STORE
               </Link>
 
@@ -78,12 +70,10 @@ function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setOpen(false)}
                     className={cn(
-                      "px-3 py-2 text-base font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground",
-                      pathname === link.href
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground"
+                      "rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent",
+                      pathname === link.href ? "bg-accent text-accent-foreground" : "text-muted-foreground"
                     )}
                   >
                     {link.label}
@@ -97,5 +87,3 @@ function Navbar() {
     </header>
   )
 }
-
-export default Navbar
