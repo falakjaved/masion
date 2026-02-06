@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Search, ShoppingBag, User, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Link from "next/link";
+import { Search, ShoppingBag, User, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Shop", href: "/shop" },
   { name: "Collections", href: "/collections" },
   { name: "About", href: "/about" },
   { name: "Journal", href: "/journal" },
-]
+];
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // dummy (backend later)
-  const cartCount = 2
-  const isLoggedIn = false
+  const cartCount = 2;
+  const isLoggedIn = false;
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur bg-white supports-backdrop-filter:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        
+
         {/* Mobile Menu Toggle */}
         <div className="flex lg:hidden">
           <Button
@@ -30,11 +30,7 @@ export function Header() {
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
 
@@ -60,7 +56,7 @@ export function Header() {
 
         {/* Icons */}
         <div className="flex items-center gap-x-2">
-          
+
           {/* 🔍 Search */}
           <Button asChild variant="ghost" size="icon">
             <Link href="/search">
@@ -69,15 +65,31 @@ export function Header() {
           </Button>
 
           {/* 👤 User */}
-          <Button
-            asChild
-            variant="ghost"
-            size="icon"
-            className="hidden sm:flex"
-          >
-            <Link href={isLoggedIn ? "/account" : "/login"}>
-              <User className="h-5 w-5" />
-            </Link>
+          <Button asChild variant="ghost" size="icon" className="hidden sm:flex">
+            {isLoggedIn ? (
+              <Link href="/account">
+                <User className="h-5 w-5" />
+              </Link>
+            ) : (
+              // Updated: Show dropdown for Login/Register
+              <div className="relative group">
+                <User className="h-5 w-5 cursor-pointer" />
+                <div className="absolute right-0 mt-2 hidden w-28 flex-col rounded border bg-white shadow-md group-hover:flex">
+                  <Link
+                    href="/login"
+                    className="px-3 py-2 text-sm hover:bg-gray-100"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/register"
+                    className="px-3 py-2 text-sm hover:bg-gray-100"
+                  >
+                    Register
+                  </Link>
+                </div>
+              </div>
+            )}
           </Button>
 
           {/* 🛍️ Cart */}
@@ -107,8 +119,26 @@ export function Header() {
               {link.name}
             </Link>
           ))}
+
+          {/* Mobile Login/Register */}
+          {!isLoggedIn && (
+            <div className="mt-2 border-t pt-2 flex flex-col space-y-1">
+              <Link
+                href="/login"
+                className="block py-2 text-sm hover:bg-gray-100 rounded px-2"
+              >
+                Login
+              </Link>
+              <Link
+                href="/register"
+                className="block py-2 text-sm hover:bg-gray-100 rounded px-2"
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </header>
-  )
+  );
 }
