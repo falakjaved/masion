@@ -7,6 +7,9 @@ import { FeaturedProducts } from "@/components/features-products";
 import { Testimonials } from "@/components/testimoniais";
 import Link from "next/link";
 
+// ✅ Client-side cart preview
+import CartPreview from "@/components/cart/CartPreview";
+
 export default function Home() {
   return (
     <>
@@ -17,6 +20,9 @@ export default function Home() {
         <FeaturedProducts />
         <Testimonials />
         <Newsletter />
+
+        {/* Cart Preview Section */}
+        <CartPreview />
 
         <div className="text-center py-16">
           <Link

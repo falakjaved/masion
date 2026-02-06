@@ -33,7 +33,7 @@ export function Newsletter() {
         ) : (
           <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-0">
             <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} required className="h-12 rounded-lg border-0 bg-background/10 pr-4 text-background placeholder:text-background/50 sm:rounded-r-none"/>
-            <Button type="submit" size="lg" className="h-12 rounded-lg bg-background text-foreground hover:bg-background/90 sm:rounded-l-none">
+            <Button type="submit" size="default" className="h-12 rounded-lg bg-background text-foreground hover:bg-background/90 sm:rounded-l-none">
               Subscribe <ArrowRight className="ml-2 h-4 w-4"/>
             </Button>
           </form>

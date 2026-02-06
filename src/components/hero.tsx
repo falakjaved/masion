@@ -20,11 +20,11 @@ export function Hero() {
               thoughtfully designed to transform your everyday spaces.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="group">
+              <Button size="default" className="group">
                 Shop Collection
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="ghost" size="default" asChild>
                 <Link href="#">Our Story</Link>
               </Button>
             </div>
